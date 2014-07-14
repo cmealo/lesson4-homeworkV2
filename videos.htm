@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Groundswell TV</title>
+<link href="_css/main.css" rel="stylesheet" type="text/css" media="screen, projection" />
+
+    <script type="text/javascript" src="_scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="_scripts/jquery-ui.min.js"></script>
+
+<!-- Slideshow Script --> 
+
+<script type="text/javascript">
+
+function slideRotate() {
+   var active = $('#slideshow2 .gallery.active');
+
+   if ( active.length == 0 ){
+       active = $('#slideshow2 .gallery:last');
+   }
+   var next = active.next().length;
+   if (next == true){
+       next = active.next();
+   }
+   if (next == false){
+       next = $('#slideshow2 .gallery:first');
+   }
+
+   active.addClass('previous');
+
+   next.css({opacity: 0.0})
+       .addClass('active')
+       .animate({opacity: 1.0}, 1000, function() {
+           active.removeClass('active previous');
+       });
+}
+
+$(function() {
+   setInterval( "slideRotate()", 2000 );
+});
+
+</script>
+
+</head>
+
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="contactButton"><a href="" title="contact us">Contact Us</a></div>
+<img src="_assets/banner.gif" width="770" height="110" alt="Groundswell" />
+<div id="mainNav">
+<ul>
+<li><a href="index.htm">Home</a></li>
+<li><a href="gear.htm">Gear</a></li>
+<li><a href="lifestyle.htm">Lifestyle</a></li>
+<li><a href="videos.htm" class="current">Videos</a></li>
+</ul>
+</div>
+</div>
+<div id="identifier"><img src="_images/video_banner.jpg" width="770" height="90" alt="check out our videos" /></div>
+<div id="sidebar">
+  <h3>Video Clips</h3>
+  <p>Check out our latest video series from the Ventura Open Surf Celebration. Groundswell cameras caught all the action in case you missed it.</p>
+
+<div id="slideshow2">
+  <img src="_images/video_thumb01.jpg" class="active gallery" alt="video thumb 01" width="210" height="180" class="gear" />
+  <img src="_images/video_thumb02.jpg" class="gallery" alt="video thumb2" width="210" height="180" class="gear" />
+  <img src="_images/video_thumb03.jpg" class="gallery" alt="video thumb 3" width="210" height="180" class="gear" />
+  <img src="_images/video_thumb04.jpg" class="gallery" alt="video thumb 4" width="210" height="180" class="gear" />
+</div>
+
+</div>
+
+<div id="mainContent">
+  <h1>Groundswell TV</h1>
+  <p>Miss the latest competition? Want to catch up on what Team Groundswell has been up to? Tune into Groundswell TV, new videos each month!</p>
+  <p class="video">
+  </p></div>
+  <div id="footer">
+<p>
+                &copy; Groundswell Surf <a href="privacy.htm">Privacy Policy</a> | <a href="terms.htm">
+                    Terms and Conditions</a></p>
+</div>
+</div>
+</body>
+</html>
